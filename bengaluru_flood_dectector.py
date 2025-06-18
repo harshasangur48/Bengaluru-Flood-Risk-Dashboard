@@ -73,7 +73,7 @@ area_list = sorted(df["area"].unique())
 selected_area = st.sidebar.selectbox("Choose Area", ["-- Select Area --"] + area_list)
 
 
-st.subheader("🗺️ Flood Severity Map")
+st.subheader(" Flood Severity Map")
 
 if selected_area != "-- Select Area --":
     area_group = df[df["area"] == selected_area]
