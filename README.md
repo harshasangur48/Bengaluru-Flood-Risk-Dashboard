@@ -25,7 +25,7 @@ An interactive flood visualization and prediction dashboard for Bengaluru city. 
 
 ├── **app.py** : Streamlit app 
 
-├── **bluru56.csv** : Area-wise dataset
+├── **bengaluru-182.csv** : Area-wise dataset
 
 ├── **background.jpg** : UI background image
 
