@@ -21,15 +21,13 @@ An interactive flood visualization and prediction dashboard for Bengaluru city. 
 
 📁 Bengaluru-Flood-Dashboard
 │
-├── app.py # Streamlit app
-├── bluru56.csv # Area-wise dataset
-├── background.jpg # UI background image
-├── README.md # This file
-└── requirements.txt # Python libraries
-
+├── **app.py** : Streamlit app 
+├── **bluru56.csv** : Area-wise dataset
+├── **background.jpg** : UI background image
+├── **README.md** : This file
+└── **requirements.txt** : Python libraries
+---
 
 ## Run the Application
-bash
-Copy
-Edit
+
 streamlit run app
