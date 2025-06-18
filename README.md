@@ -20,11 +20,23 @@ An interactive flood visualization and prediction dashboard for Bengaluru city. 
 ## 📂 Folder Structure
 
 📁 Bengaluru-Flood-Dashboard
+
+
 │
+
+
 ├── **app.py** : Streamlit app 
+
+
 ├── **bluru56.csv** : Area-wise dataset
+
+
 ├── **background.jpg** : UI background image
+
+
 ├── **README.md** : This file
+
+
 └── **requirements.txt** : Python libraries
 ---
 
