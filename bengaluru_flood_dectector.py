@@ -63,12 +63,12 @@ model.fit(df[features], df[target])
 
 st.markdown("""
 <div style='background-color: #0066CC; padding: 1rem; border-radius: 0.5rem;'>
-    <h1 style='color: white;'>🌧️ Bengaluru Flood Risk Dashboard</h1>
+    <h1 style='color: white;'>Bengaluru Flood Risk Dashboard</h1>
 </div>
 """, unsafe_allow_html=True)
 
 
-st.sidebar.header("📍 Area Selection")
+st.sidebar.header("Area Selection")
 area_list = sorted(df["area"].unique())
 selected_area = st.sidebar.selectbox("Choose Area", ["-- Select Area --"] + area_list)
 
@@ -132,7 +132,7 @@ folium_static(base_map)
 
 if selected_area != "-- Select Area --":
     st.markdown('<div class="block-style">', unsafe_allow_html=True)
-    st.subheader(f"🧠 AI Prediction for {selected_area}")
+    st.subheader(f" AI Prediction for {selected_area}")
     rain = area_group["rainfall"].mean()
     elev = area_group["elevation"].mean()
     dist = area_group["distance_to_river"].mean()
@@ -140,25 +140,25 @@ if selected_area != "-- Select Area --":
     sev = severity_map[pred]
     proba = model.predict_proba([[rain, elev, dist]])[0][pred]
 
-    st.success(f"🚨 Predicted Severity: `{sev}` (Confidence: {proba*100:.1f}%)")
-    st.metric("📊 Avg Rainfall (mm)", f"{rain:.2f}")
-    st.metric("🏞️ Elevation (m)", f"{elev:.2f}")
-    st.metric("🌊 Distance to River (km)", f"{dist:.2f}")
+    st.success(f" Predicted Severity: `{sev}` (Confidence: {proba*100:.1f}%)")
+    st.metric(" Avg Rainfall (mm)", f"{rain:.2f}")
+    st.metric(" Elevation (m)", f"{elev:.2f}")
+    st.metric(" Distance to River (km)", f"{dist:.2f}")
 
-    st.markdown("#### 🛠️ Suggested Precautions")
+    st.markdown("####  Suggested Precautions")
     if sev == "Low":
-        st.info("✅ Low Risk: Stay aware, monitor local news during heavy rainfall.")
+        st.info(" Low Risk: Stay aware, monitor local news during heavy rainfall.")
     elif sev == "Medium":
-        st.warning("⚠️ Moderate Risk: Avoid low-lying areas, prepare for possible flooding.")
+        st.warning(" Moderate Risk: Avoid low-lying areas, prepare for possible flooding.")
     elif sev == "High":
-        st.error("🚨 High Risk: Avoid travel, move valuables to higher ground, stay alert for evacuation alerts.")
+        st.error(" High Risk: Avoid travel, move valuables to higher ground, stay alert for evacuation alerts.")
 
-    st.markdown("🔗 [Check BBMP Alerts](https://varunamitra.karnataka.gov.in/Default/Index?service=FloodForecast)")
+    st.markdown(" [Check BBMP Alerts](https://varunamitra.karnataka.gov.in/Default/Index?service=FloodForecast)")
     st.markdown('</div>', unsafe_allow_html=True)
 
 
 st.markdown('<div class="block-style">', unsafe_allow_html=True)
-st.markdown("### 🎛️ Predict Severity for Custom Conditions")
+st.markdown("###  Predict Severity for Custom Conditions")
 with st.form("custom_form"):
     col1, col2, col3 = st.columns(3)
     with col1:
@@ -173,12 +173,12 @@ if submitted:
     pred = model.predict([[user_rain, user_elev, user_dist]])[0]
     proba = model.predict_proba([[user_rain, user_elev, user_dist]])[0][pred]
     sev = severity_map[pred]
-    st.success(f"🎯 Predicted Severity: `{sev}`")
+    st.success(f" Predicted Severity: `{sev}`")
     st.progress(int(proba * 100), text=f"Confidence: {proba*100:.1f}%")
 st.markdown('</div>', unsafe_allow_html=True)
 
 
-st.markdown("### 📈 Area-wise Rainfall and Severity Charts")
+st.markdown("###  Area-wise Rainfall and Severity Charts")
 col1, col2 = st.columns(2)
 with col1:
     rain_avg = df.groupby("area")["rainfall"].mean().sort_values()
@@ -192,7 +192,7 @@ with col2:
     st.pyplot(fig)
 
 
-st.markdown("### 🌧️ Real-time Rainfall (Windy Overlay)")
+st.markdown("###  Real-time Rainfall (Windy Overlay)")
 windy_html = """
 <iframe width="100%" height="400" src="https://embed.windy.com/embed2.html?lat=12.9716&lon=77.5946&detailLat=12.9716&detailLon=77.5946&width=650&height=450&zoom=10&level=surface&overlay=rain&menu=true&message=true&marker=true&calendar=24&pressure=true&type=map&location=coordinates&detail=true&metricWind=default&metricTemp=default&radarRange=-1"
 frameborder="0"></iframe>
