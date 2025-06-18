@@ -31,7 +31,6 @@ An interactive flood visualization and prediction dashboard for Bengaluru city. 
 
 ├── **README.md** : This file
 
-└── **requirements.txt** : Python libraries
 ---
 
 ## Run the Application
