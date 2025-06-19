@@ -1,7 +1,6 @@
 area,latitude,longitude,rainfall,elevation,distance_to_river,year,severity,severity_code
 Adugodi,12.9716,77.5946,218.54,35.88,3.41,2022,high,2
 Agaram,12.8431,77.4863,477.82,213.97,1.13,2002,low,0
-Air Force Stn. Yelahanka,13.1048,77.5763,379.4,228.24,9.25,2017,low,0
 Banashankari,12.925453,77.546761,319.4,168.38,8.77,2023,medium,1
 Banashankari 2nd Stage,12.9249,77.5662,120.21,231.29,2.58,2012,medium,1
 Banashankari 3rd Stage,12.9271,77.5548,120.2,148.14,6.6,2006,low,0
